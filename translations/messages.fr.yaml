@@ -1,0 +1,59 @@
+# Traduction globale
+Dashboard : Tableau de bord
+Logged in as : Connecté en tant que
+Logout : Déconnexion
+Result : Résultat
+Results : Résultats
+Previous : Précédent
+Next : Suivant
+Edit : Editer
+Delete : Supprimer
+ID : Id
+
+# Traduction des catégories
+User : Utilisateur
+Category of competence : Catégorie de compétence
+Categories of competence : Catégories de compétence
+Category : Catégorie
+Categories : Catégories
+All competences : Toutes mes compétences
+Competence : Compétence
+Competences : Compétences
+All experiences : Toutes mes expériences
+Experience : Expérience
+Experiences : Expériences
+All projects : Tous mes projets
+Project : Projet
+Projects : Projets
+All languages : Tous les langages
+Tag : Langage
+Tags : Langages
+
+# Traduction des boutons
+Add User : Créer un utilisateur
+Add Cateogy : Créer une catégorie
+Add Competence : Créer une compétence
+Add Project : Créer un projet
+Add Tag : Créer un langage
+
+# Traduction des différentes colonnes
+Name : Nom
+Picture : Photo
+Title : Titre
+Content : Contenu
+Datedebut : Date de début
+Datefin : Date de fin
+Resume : Description
+Email : Email
+Roles : Rôle
+Password : Mot de passe
+Is Verified : Validé
+
+# Traduction obligatoire
+Tableau de bord : Tableau de bord
+Utilisateur : Utilisateur
+Catégories de compétence : Catégories de compétence
+Toutes mes compétences : Toutes mes compétences
+Toutes mes expériences : Toutes mes expériences
+Tous mes projets : Tous mes projets
+Tous les langages : Tous les langages
