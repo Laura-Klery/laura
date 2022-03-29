@@ -4,6 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Experience;
 use App\Entity\Project;
+use App\Entity\Skill;
+use App\Entity\Cat;
 use App\Entity\Tag;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -32,6 +34,8 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home');
         yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user', User::class);
+        yield MenuItem::linkToCrud('Catégories de compétence', 'fas fa-folder', Cat::class);
+        yield MenuItem::linkToCrud('Toutes mes compétences', 'fas fa-list', Skill::class);
         yield MenuItem::linkToCrud('Toutes mes expériences', 'fas fa-briefcase', Experience::class);
         yield MenuItem::linkToCrud('Tous mes projets', 'fas fa-laptop-code', Project::class);
         yield MenuItem::linkToCrud('Tous les langages', 'fas fa-code', Tag::class);

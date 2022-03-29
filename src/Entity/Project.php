@@ -40,13 +40,13 @@ class Project
     private $picture;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Tag::class, mappedBy="project_id")
+     * @ORM\ManyToMany(targetEntity=Tag::class, mappedBy="project")
      */
-    private $tag_id;
+    private $tag;
 
     public function __construct()
     {
-        $this->tag_id = new ArrayCollection();
+        $this->tag = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -103,29 +103,34 @@ class Project
     }
 
     /**
-     * @return Collection<int, Tag>
+     * @return Collection|Tag[]
      */
-    public function getTagId(): Collection
+    public function getTag(): Collection
     {
-        return $this->tag_id;
+        return $this->tag;
     }
 
-    public function addTagId(Tag $tagId): self
+    public function addTag(Tag $tag): self
     {
-        if (!$this->tag_id->contains($tagId)) {
-            $this->tag_id[] = $tagId;
-            $tagId->addProjectId($this);
+        if (!$this->tag->contains($tag)) {
+            $this->tag[] = $tag;
+            $tag->addProject($this);
         }
 
         return $this;
     }
 
-    public function removeTagId(Tag $tagId): self
+    public function removeTag(Tag $tag): self
     {
-        if ($this->tag_id->removeElement($tagId)) {
-            $tagId->removeProjectId($this);
+        if ($this->tag->removeElement($tag)) {
+            $tag->removeProject($this);
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

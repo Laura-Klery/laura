@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\TagRepository;
+use App\Repository\CatRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=TagRepository::class)
+ * @ORM\Entity(repositoryClass=CatRepository::class)
  */
-class Tag
+class Cat
 {
     /**
      * @ORM\Id
@@ -25,13 +25,13 @@ class Tag
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Project::class, inversedBy="tag")
+     * @ORM\OneToMany(targetEntity=Skill::class, mappedBy="cat")
      */
-    private $project;
+    private $skills;
 
     public function __construct()
     {
-        $this->project = new ArrayCollection();
+        $this->skills = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -52,25 +52,31 @@ class Tag
     }
 
     /**
-     * @return Collection|Project[]
+     * @return Collection|Skill[]
      */
-    public function getProject(): Collection
+    public function getSkills(): Collection
     {
-        return $this->project;
+        return $this->skills;
     }
 
-    public function addProject(Project $project): self
+    public function addSkill(Skill $skill): self
     {
-        if (!$this->project->contains($project)) {
-            $this->project[] = $project;
+        if (!$this->skills->contains($skill)) {
+            $this->skills[] = $skill;
+            $skill->setCat($this);
         }
 
         return $this;
     }
 
-    public function removeProject(Project $project): self
+    public function removeSkill(Skill $skill): self
     {
-        $this->project->removeElement($project);
+        if ($this->skills->removeElement($skill)) {
+            // set the owning side to null (unless already changed)
+            if ($skill->getCat() === $this) {
+                $skill->setCat(null);
+            }
+        }
 
         return $this;
     }
@@ -79,4 +85,5 @@ class Tag
     {
         return $this->name;
     }
+   
 }
