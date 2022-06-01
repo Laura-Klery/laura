@@ -1,0 +1,289 @@
+/* GENERAL */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: var(--title);
+    font-size: 50px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+li {
+    list-style-type: none;
+    font-family: var(--text);
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark);
+}
+/* LAYOUT */
+.container {
+    margin: 0 auto;
+    padding: 0 8px;
+    min-width: 320px;
+}
+
+main {
+    background-color: var(--mainColor);
+    margin: 52px 0 0 0;
+}
+
+/* HEADER */
+.main-header {
+    background-color: var(--mainColorHF);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+}
+
+.header-container {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+    padding: 0 2px;
+}
+
+.header-site-name {
+    color: var(--dark);
+    font-family: var(--title);
+    font-size: 20px;
+}
+
+.header-logo {
+    display: block;
+    width: 50px;
+    margin: 0;
+}
+
+.header-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.main-nav {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    z-index: 1;
+    width: 100%;
+}
+
+.main-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.main-nav a {
+    width: 100%;
+    display: block;
+    padding: 20px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.main-nav li:hover {
+    box-shadow: rgba(var(--mainColor), 0.35) 0px 2px 2px;
+}
+
+.icon{
+    width: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.active {
+    color: var(--light);
+    left: 0;
+    background-color: var(--mainColor);
+}
+
+/* MENU */
+.btn-burger {
+    width: 30px;
+    height: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-burger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--dark);
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.7s ease-in-out;
+}
+
+.btn-burger span::before,
+.btn-burger span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--dark);
+    transition: transform 0.7s ease-in-out;
+}
+
+.btn-burger span::before {
+    transform: translateY(-10px);
+}
+
+.btn-burger span::after {
+    transform: translateY(10px);
+}
+
+.btn-burger.active span {
+    background-color: transparent;
+}
+
+.btn-burger.active span::before {
+    transform: translateY(0px) rotateZ(-45deg);
+}
+
+.btn-burger.active span::after {
+    transform: translateY(0px) rotateZ(45deg);
+}
+
+/* FORMULAIRE */
+.link {
+    color: var(--light);
+}
+
+/* ACCUEIL */
+
+/* A PROPOS */
+
+/* PROJET */
+
+/* CONTACT */
+
+/* FOOTER */
+.main-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--mainColorHF);
+    font-family: var(--text);
+    font-size: 16px;
+}
+
+/* RESPONSIVE */
+/* TABLETTE */
+@media screen and (min-width:768px) {
+    /* LAYOUT */
+    main {
+        margin:144px 0 0 0;
+    }
+
+    /* HEADER */
+    .header-container {
+        padding:2px 0 0 0;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .main-nav {
+        position: static;
+        display: flex;
+    }
+
+    .header-site-name {
+        font-size: 25px;
+    }
+
+    .main-nav ul {
+        display: flex;
+        align-items: center;
+        flex-wrap:nowrap;
+    }
+
+    .main-nav li:hover {
+        box-shadow: rgba(var(--mainColor), 0.35) 0px 2px 2px;
+    }
+
+    .main-nav a {
+        font-size: 16px;
+    }
+
+    .btn-burger {
+        display: none;
+    }
+}
+
+/* ORDINATEUR PORTABLE */
+@media all and (min-width:1024px) {
+    /* LAYOUT */
+    main {
+        margin: 94px 0 0 0;
+    }
+
+    /* HEADER */
+    .main-header {
+        z-index: 1;
+    }
+
+    .header-container {
+        margin: 0;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .main-nav ul {
+        align-items: center;
+    }
+
+    .header-site-name {
+        font-size: 24px;
+    }
+
+    .header-logo {
+        width: 75px;
+        padding:0 2px 0;
+    }
+
+    .main-nav {
+        width: 70%;
+    }
+}
+
+/* ORDINATEUR FIXE */
+@media all and (min-width:1440px) {
+    /* LAYOUT */
+    main {
+        margin:100px 0 0 0;
+    }
+
+    /* HEADER */
+    .header-logo {
+        width: 100px;
+    }
+
+    .header-site-name {
+        font-size: 25px;
+    }
+}

@@ -21,7 +21,7 @@ class ProjectCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnDetail()->hideOnForm()->hideOnIndex(),
+            IdField::new('id')->onlyOnIndex(),
             TextField::new('name'),
             TextEditorField::new('content'),
             TextEditorField::new('resume'),

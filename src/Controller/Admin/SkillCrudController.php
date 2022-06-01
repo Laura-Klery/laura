@@ -19,7 +19,7 @@ class SkillCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnDetail()->hideOnForm()->hideOnIndex(),
+            IdField::new('id', 'Index')->onlyOnIndex(),
             TextField::new('name'),
             ImageField::new('picture')
                 ->setBasePath('uploads/')

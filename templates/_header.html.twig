@@ -1,0 +1,26 @@
+<header class="main-header">
+    <div class="header-container container">
+        <a href="{{ path('accueil') }}" class="header-logo"><img src="{{ asset('/pictures/logo.svg') }}" alt="Logo LK"></a>
+        <span class="header-site-name">Développeuse web</span>
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="{{ path('accueil') }}" class="nav-link">Accueil</a>
+                </li>
+                <li>
+                    <a href="{{ path('a-propos') }}" class="nav-link">A propos</a>
+                </li>
+                <li>
+                    <a href="{{ path('projet') }}" class="nav-link">Projets</a>
+                </li>
+                <li>
+                    <a href="{{ path('contact') }}" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="btn-burger">
+            <span class="bar"></span>
+        </div>
+        <a href="https://www.linkedin.com/in/laura-klerykowski" target="_blank" class="nav-link icon"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</header>
