@@ -42,7 +42,7 @@ main {
 
 /* HEADER */
 .main-header {
-    background-color: var(--mainColorHF);
+    background-color: var(--mainColor);
     width: 100%;
     position: fixed;
     top: 0;
@@ -101,14 +101,14 @@ main {
     line-height: 25px;
 }
 
-.main-nav li:hover {
-    box-shadow: rgba(var(--mainColor), 0.35) 0px 2px 2px;
+.main-nav a:hover, .main-footer a:hover {
+    box-shadow: 5px 5px 5px 5px rgba(140,137,159,0.6);
 }
 
 .icon{
     width: 30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .active {
@@ -185,7 +185,7 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: var(--mainColorHF);
+    background-color: var(--mainColor);
     font-family: var(--text);
     font-size: 16px;
 }
@@ -221,8 +221,8 @@ main {
         flex-wrap:nowrap;
     }
 
-    .main-nav li:hover {
-        box-shadow: rgba(var(--mainColor), 0.35) 0px 2px 2px;
+    .main-nav a:hover, .main-footer a:hover {
+        box-shadow: 5px 5px 5px 5px rgba(140,137,159,0.6);
     }
 
     .main-nav a {
