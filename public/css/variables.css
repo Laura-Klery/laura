@@ -5,7 +5,7 @@
 
     /* Colors */
     --mainColor: rgb(191, 187, 217);
-    --shadowBox: rgb(140, 137, 159);
+    --shadowBox: rgba(140, 137, 159, 0.6);
     --dark: rgb(0,0,0);
     --light: rgb(255, 255, 255);
     --btnColor: rgb(195, 64, 139);
