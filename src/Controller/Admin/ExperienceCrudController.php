@@ -20,11 +20,11 @@ class ExperienceCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->onlyOnIndex(),
-            TextField::new('title'),
-            TextEditorField::new('content'),
-            DateField::new('datedebut'),
-            DateField::new('datefin'),
+            IdField::new('id', 'Index')->onlyOnIndex(),
+            TextField::new('title', 'Titre'),
+            TextEditorField::new('content', 'Contenu'),
+            DateField::new('datedebut', 'Date de début'),
+            DateField::new('datefin', 'Date de fin')
         ];
     }
 

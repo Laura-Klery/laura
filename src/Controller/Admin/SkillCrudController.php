@@ -20,11 +20,11 @@ class SkillCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id', 'Index')->onlyOnIndex(),
-            TextField::new('name'),
-            ImageField::new('picture')
+            TextField::new('name', 'Nom'),
+            ImageField::new('picture', 'Photo')
                 ->setBasePath('uploads/')
                 ->setUploadDir('public/uploads'),
-            AssociationField::new('cat'),
+            AssociationField::new('cat', 'Catégorie')
         ];
     }
 }
