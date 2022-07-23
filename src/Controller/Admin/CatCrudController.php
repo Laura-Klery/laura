@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Cat;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -19,7 +20,7 @@ class CatCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id', 'Index')->onlyOnIndex(),
-            TextField::new('name'),
+            TextField::new('name', 'Nom'),
         ];
     }
 
